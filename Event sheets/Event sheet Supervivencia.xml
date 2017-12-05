@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet Supervivencia</name>
+    <events>
+        <event-block sid="149756177050246">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="472091243175541" type="Superviviente">
+                    <param id="0" name="Object">Columnas</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="0" name="Stop" sid="565342524798884" type="Superviviente" />
+            </actions>
+        </event-block>
+        <event-block sid="896338074446999">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="775438440466987" type="Bala">
+                    <param id="0" name="Object">Columnas</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="460887530728570" type="Bala" />
+            </actions>
+        </event-block>
+        <event-block sid="202747003052964">
+            <conditions>
+                <condition id="0" name="On click" sid="490772033007550" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="763382543712022" type="Superviviente">
+                    <param id="0" name="Object">Bala</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action id="0" name="Play" sid="892478651599930" type="SonidoMenu">
+                    <param id="0" name="Audio file">Sonido_Disparo_Pistola-_AudioTrimmer_com_</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;Pistola&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="127996043813378">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="363835377010602" type="System" />
+            </conditions>
+            <actions>
+                <action id="-22" name="Set angle toward position" sid="908350138826312" type="Zombie">
+                    <param id="0" name="X">Superviviente.X</param>
+                    <param id="1" name="Y">Superviviente.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="239572754571714">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="703251148686271" type="System">
+                    <param id="0" name="Interval (seconds)">2.0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="767167646128908" type="Raspawn">
+                    <param id="0" name="Object">Zombie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">random(0,4)</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="311739410939471" type="Raspawn2">
+                    <param id="0" name="Object">Zombie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">random(0,4)</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="875518746035410" type="Raspawn3">
+                    <param id="0" name="Object">Zombie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">random(0,4)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="697894655691140">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="385616857855896" type="System" />
+            </conditions>
+            <actions>
+                <action id="-22" name="Set angle toward position" sid="275868332685746" type="Superviviente">
+                    <param id="0" name="X">Mouse.X</param>
+                    <param id="1" name="Y">Mouse.Y</param>
+                </action>
+                <action id="-3" name="Set position" sid="711552483882234" type="Luz">
+                    <param id="0" name="X">Superviviente.X</param>
+                    <param id="1" name="Y">Superviviente.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="186909363721391">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="470099566578139" type="Bala">
+                    <param id="0" name="Object">Zombie</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="300817484422934" type="Zombie" />
+                <action id="-9" name="Destroy" sid="634781547856434" type="Bala" />
+                <action id="-11" name="Add to" sid="183562629964368" type="Contador">
+                    <param id="0" name="Instance variable">Contador</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="744861857577917" type="Contador">
+                    <param id="0" name="Text">Contador.Contador</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="725789865799674" type="Zombie">
+                    <param id="0" name="Object">Sangre1</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="408928472304983">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="741855038657638" type="Zombie">
+                    <param id="0" name="Object">Superviviente</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="2" name="Stop" sid="967814138345605" type="Zombie" />
+                <action id="0" name="Spawn another object" sid="955964126948271" type="Superviviente">
+                    <param id="0" name="Object">Sangre2</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="889121376608526">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="287730480846179" type="Zombie">
+                    <param id="0" name="Object">Superviviente</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="442953223175927" type="Superviviente">
+                    <param id="0" name="Instance variable">Vida</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-12" name="Subtract from" sid="165465385804910" type="Superviviente">
+                    <param id="0" name="Instance variable">Porcentage</param>
+                    <param id="1" name="Value">Superviviente.Vida*400/200</param>
+                </action>
+                <action id="-5" name="Set width" sid="950150040025297" type="BarraVida2">
+                    <param id="0" name="Width">338.318*Superviviente.Porcentage/100</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="836320581390722">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="300041853905599" type="Keyboard">
+                    <param id="0" name="Key">80 (P)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="207960645684396" type="System">
+                    <param id="0" name="Layout">Pausa</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="780336843683605">
+            <conditions>
+                <condition id="2" name="Key is down" sid="888700137987164" type="Keyboard">
+                    <param id="0" name="Key">38 (Up arrow)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="996103914597739" type="Superviviente">
+                    <param id="0" name="Animation">&quot;AnimacionSuperviviente&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="630131615010835">
+            <conditions>
+                <condition id="7" name="On any key released" sid="622883920998794" type="Keyboard" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="877696504962195" type="Superviviente">
+                    <param id="0" name="Animation">&quot;AnimacionParado&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="228326506623710">
+            <conditions>
+                <condition id="2" name="Key is down" sid="852680577576466" type="Keyboard">
+                    <param id="0" name="Key">40 (Down arrow)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="564963808278192" type="Superviviente">
+                    <param id="0" name="Animation">&quot;AnimacionSuperviviente&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="600310346210309">
+            <conditions>
+                <condition id="2" name="Key is down" sid="377811664315540" type="Keyboard">
+                    <param id="0" name="Key">39 (Right arrow)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="357759094852041" type="Superviviente">
+                    <param id="0" name="Animation">&quot;AnimacionSuperviviente&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="944220377953078">
+            <conditions>
+                <condition id="2" name="Key is down" sid="789261024864055" type="Keyboard">
+                    <param id="0" name="Key">37 (Left arrow)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="622123935102769" type="Superviviente">
+                    <param id="0" name="Animation">&quot;AnimacionSuperviviente&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="825023560091385">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="931478934591300" type="System" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="210645515703243" type="Superviviente">
+                    <param id="0" name="Animation">&quot;AnimacionParado&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="0" name="Play" sid="991357549374619" type="SonidoMenu">
+                    <param id="0" name="Audio file">menu_loop</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;Intro&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="511078638115967">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="784065765138672" type="Superviviente">
+                    <param id="0" name="Instance variable">Vida</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="813305554630897" type="System">
+                    <param id="0" name="Layout">Lose</param>
+                </action>
+                <action id="0" name="Play" sid="310415055563164" type="SonidoMenu">
+                    <param id="0" name="Audio file">Sonido_Muerte</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="582095961172361">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="686187876874139" type="Superviviente" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="127436906229154" type="System">
+                    <param id="0" name="Layout">Lose</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="587127280667221">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="924858114661319" type="System">
+                    <param id="0" name="Interval (seconds)">5.0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="742641853080271" type="SonidoMenu">
+                    <param id="0" name="Audio file">Sonido_Zombie</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

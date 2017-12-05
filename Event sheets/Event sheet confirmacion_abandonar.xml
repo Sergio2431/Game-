@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet confirmacion_abandonar</name>
+    <events>
+        <event-block sid="308191459013649">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="734641902975093" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">No</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="553901754138675" type="System">
+                    <param id="0" name="Layout">Pausa</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="335803576126871">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="245137825857203" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">Si</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="356882586842500" type="System">
+                    <param id="0" name="Layout">Menu</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
